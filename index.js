@@ -39,14 +39,27 @@ var fs = require('fs');
 const longLista = pdf.lista.length;
 
 var dd = {
-	content: [
-        {
-			stack: [
-				'This header has both top and bottom margins defined',
-				{text: 'This is a subheader', style: 'subheader'},
-			],
-			style: 'header'
-		}	
+    header: {
+        margin: 10,
+        columns: [
+            {
+                image: './public/333.png',
+                width: 40
+            },
+            {
+                margin: [10, 0, 0, 0],
+                text: 'Here goes the rest'
+            }
+        ]
+    },
+    footer: {
+        columns: [
+            {image:'./public/in33.jpg', fit: [90, 90],  margin: [30, 5, 5, 5]},
+            {text : 'Left part', margin: [10, 10, 45, 20]},
+            { text: 'Right part', alignment: 'right' }
+        ]
+      },
+    content: [
     ],
     styles: {
 		header: {
